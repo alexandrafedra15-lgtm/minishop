@@ -49,6 +49,7 @@ class ProductServiceIntegrationTest {
 
         assertThat(result.getId()).isEqualTo(1L);
         assertThat(result.getName()).isEqualTo("Auriculares Sony");
+        assertThat(result.getPrice()).isEqualTo(99999.0); // error deliberado
         verify(productRepository, times(1)).save(any(Product.class));
     }
 
