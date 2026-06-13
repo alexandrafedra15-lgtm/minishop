@@ -26,17 +26,20 @@ jobs:
 
       - name: 3 - Compilar el proyecto
         run: mvn compile --no-transfer-progress
+        working-directory: minishop
 
       - name: 4 - Ejecutar pruebas unitarias
         run: mvn test --no-transfer-progress
+        working-directory: minishop
 
       - name: 5 - Ejecutar pruebas de integración
         run: mvn verify --no-transfer-progress
+        working-directory: minishop
 
       - name: 6 - Publicar reporte de pruebas
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reporte-pruebas
-          path: target/surefire-reports/
+          path: minishop/target/surefire-reports/
           retention-days: 7
