@@ -42,8 +42,8 @@ jobs:
         run: >
           mvn sonar:sonar
           --no-transfer-progress
-          -Dsonar.projectKey=⚠️TU_PROJECT_KEY_SONAR
-          -Dsonar.organization=${{ secrets.SONAR_ORG }}
+          -Dsonar.projectKey=alexandrafedra15-lgtm_minishop
+          -Dsonar.organization=alexandrafedra15-lgtm
 
       - name: 7 - Publicar reporte de pruebas y cobertura
         uses: actions/upload-artifact@v4
@@ -53,4 +53,4 @@ jobs:
           path: |
             target/surefire-reports/
             target/site/jacoco/
-          retention-days: 7pweo
+          retention-days: 7
