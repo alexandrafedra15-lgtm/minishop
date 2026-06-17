@@ -12,6 +12,9 @@ jobs:
   build-and-test:
     name: Build, Pruebas y Análisis de Calidad
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: minishop
 
     steps:
       - name: 1 - Checkout del código fuente
@@ -51,6 +54,6 @@ jobs:
         with:
           name: reporte-pruebas-y-cobertura
           path: |
-            target/surefire-reports/
-            target/site/jacoco/
+            minishop/target/surefire-reports/
+            minishop/target/site/jacoco/
           retention-days: 7
